@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export CHROME_EXECUTABLE="chromium"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/Applications/android-studio/bin"
+
+export VISUAL="nvim"
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export TERMINAL_ARGS="-e tmux"
+export BROWSER="chromium"
+export FILE_EXPLORER="nautilus"

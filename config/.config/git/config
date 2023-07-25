@@ -1,0 +1,13 @@
+[merge]
+	tool = nvimdiff
+[user]
+	name = Raphaël Weis
+	email = raphael.weis.2003@gmail.com
+[pull]
+	rebase = false
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

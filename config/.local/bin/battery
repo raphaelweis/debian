@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Get the battery level as a percentage, and the battery status as a string
+if ! `cat /sys/class/power_supply/BAT0/capacity &>/dev/null`; then
+    exit 0
+else
+    battery_level=$(cat /sys/class/power_supply/BAT0/capacity)
+fi
+
+if ! `cat /sys/class/power_supply/BAT0/status &>/dev/null`; then
+    exit 0
+else
+    charging_status=$(cat /sys/class/power_supply/BAT0/status)
+fi
+
+
+# Define the battery icon based on the battery level, and the battery status
+battery_icon=""
+
+if [ "$charging_status" == "Charging" ]; then
+  case $battery_level in
+     [0-9]|10) battery_icon="󰢟" ;;
+    1[1-9]|20) battery_icon="󰢜" ;;
+    2[1-9]|30) battery_icon="󰂆" ;;
+    3[1-9]|40) battery_icon="󰂇" ;;
+    4[1-9]|50) battery_icon="󰂈" ;;
+    5[1-9]|60) battery_icon="󰢝" ;;
+    6[1-9]|70) battery_icon="󰂉" ;;
+    7[1-9]|80) battery_icon="󰢞" ;;
+    8[1-9]|90) battery_icon="󰂊" ;;
+    9[1-9]   ) battery_icon="󰂋" ;;
+          100) battery_icon="󰂅" ;;
+  esac
+else
+  case $battery_level in
+     [0-9]|10) battery_icon="󰂃" ;;
+    1[1-9]|20) battery_icon="󰁺" ;;
+    2[1-9]|30) battery_icon="󰁻" ;;
+    3[1-9]|40) battery_icon="󰁼" ;;
+    4[1-9]|50) battery_icon="󰁽" ;;
+    5[1-9]|60) battery_icon="󰁾" ;;
+    6[1-9]|70) battery_icon="󰁿" ;;
+    7[1-9]|80) battery_icon="󰂀" ;;
+    8[1-9]|90) battery_icon="󰂁" ;;
+    9[1-9]   ) battery_icon="󰂂" ;;
+          100) battery_icon="󰁹" ;;
+  esac
+fi
+
+# Output the battery icon and percentage
+echo "$battery_icon $battery_level%"
