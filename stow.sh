@@ -12,7 +12,7 @@ if [ ! -d "./setup" ]; then
     git clone https://github.com/raphaelweis/dwm.git ./setup/dwm
     git clone https://github.com/raphaelweis/dwmblocks.git ./setup/dwmblocks
     git clone https://github.com/raphaelweis/nvchad.git ./setup/nvchad
-    git clone https://github.com/raphaelweis/st.git ./setup/git
+    git clone https://github.com/raphaelweis/st.git ./setup/st
     git clone https://github.com/raphaelweis/sxhkd.git ./setup/sxhkd
     git clone https://github.com/raphaelweis/tmux.git ./setup/tmux
     git clone https://github.com/raphaelweis/wallpapers.git ./setup/wallpapers
